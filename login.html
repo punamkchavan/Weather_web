@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        
+        body
+        {
+         background-image: url(./images/login.png);
+         background-repeat: no-repeat;
+         background-size: cover;
+         font-size: 3vh;
+         text-align:center;
+         color:black;
+        
+        }
+        
+        .box
+        {
+            top: 1cm;
+            position: absolute;
+            height: 75vh;
+            width: 80vh;
+            font-size: 3vh;
+            left: 12cm;
+            box-sizing: border-box;
+            background: rgba(110,110,110,0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0,0,0.3);
+            backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255,255,0.18);
+            z-index: 1;
+            padding: 3em 2em;
+            align-items: center;
+            
+        }
+        
+        input
+        {
+        box-shadow: inset;
+        border-color: black;
+         
+        height: 30px;
+        background-color:rgb(232, 215, 215);
+        width: 30vh;
+        border-radius: 1vw;
+    
+
+        }
+    .a1
+     {
+        width:100px;
+        background-color:rgb(242, 157, 157);
+        height: 7vh;
+        color: #000;
+        text-align:center;
+        border-radius: 5cm;
+        font-weight: bold;
+     }
+
+
+        </style>
+</head>
+<body>
+    <form id="loginform">
+    <center>
+    <div class="box">
+    <h1>Login Here</h1>
+    
+
+    
+    <label>Enter Username :</label>
+    
+    
+    <input type="text" placeholder=" Please enter Username" id="loginuname" required>
+    <br><br><br>
+    
+    <label>Enter Password :</label>
+    
+    <input type="password" placeholder=" Please enter Password" id="loginpassword" required>
+    <br><br><br>
+    <input class="a1" type="submit" value="LOGIN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <br><br>
+    <br>
+     <p>click here for  <a href="register.html" > register</a>...</p>
+     </div>
+     </form>
+        <script>
+            document.getElementById("loginform").addEventListener("submit", function (event) {
+                event.preventDefault();
+                var entereduname = document.getElementById("loginuname").value;
+                var enteredpassword = document.getElementById("loginpassword").value;
+    
+                var storeduname = localStorage.getItem("uname");
+                var storedpassword = localStorage.getItem("password");
+    
+                if (entereduname === storeduname && enteredpassword === storedpassword) 
+                {
+                    alert("Login Successfully")
+                    window.location.href = "index.html"
+                }
+                else {
+                    alert("login failed")
+                }
+            })
+        </script>
+        
+    </center>
+</body>
+</html>

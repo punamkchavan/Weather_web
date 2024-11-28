@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body
+        {
+         background-image: url(./images/clear1.png);
+         background-repeat: no-repeat;
+         background-size: cover;
+         font-size: 3vh;
+         text-align:center;
+         color:black;
+        
+        }
+        
+        .box
+        {
+            top: 1cm;
+            position: absolute;
+            height: 75vh;
+            width: 80vh;
+            font-size: 3vh;
+            left: 12cm;
+            box-sizing: border-box;
+            background: rgba(110,110,110,0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0,0,0.3);
+            backdrop-filter: blur(10px);
+           -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255,255,0.18);
+            z-index: 1;
+            padding: 3em 2em;
+            align-items: center;
+            
+        }
+        
+        input
+        {
+        box-shadow: inset;
+        border-color: black;
+         
+        height: 30px;
+        background-color:rgb(218, 233, 240);
+        width: 30vh;
+        border-radius: 1vw;
+    
+
+        }
+    .a1
+     {
+        width:100px;
+        background-color:rgb(151, 159, 171);
+        height: 40px;
+        color:rgb(14, 11, 11);
+        text-align:center;
+        border-radius: 4cm;
+     }
+      
+
+        </style>
+</head>
+<body>
+    <form id="registerform">
+    <center>
+     
+
+    <div class="box">
+        <h1>Register Here</h1>
+        <br>
+        
+        <label>Enter Your Fullname    :</label>
+    
+    
+        <input type="text" placeholder="Enter your fullname"  required>
+        <br><br>
+        <label>Enter Email-Address :</label>
+    
+    
+        <input type="text" placeholder="Enter your Email-Address" required>
+        <br><br>
+    <label>Enter New Username :</label>
+    
+    
+    <input type="text" id="uname" placeholder="Enter New Username" required>
+    <br><br>
+    
+    <label>Enter New Password :</label>
+    
+    <input type="password" id="password" placeholder="Enter New Password" required>
+    <br><br><br>
+    <input style="font-size:90%;"  class="a1" type="submit" value="SignUp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input style="font-size:90%;" class="a1" type="reset"  value="Cancle">
+    <br><br>
+    <br>
+
+      
+        <p><h4>If you already register then click here for     <a href="login.html">Login</a></h4></p>
+      </div>
+     </center>
+    </form>
+    <script>
+
+        document.getElementById("registerform")
+        addEventListener("submit",function(event)
+        {
+            event.preventDefault();
+                var uname=document.getElementById("uname").value
+                var password=document.getElementById("password").value
+
+                localStorage.setItem("uname",uname)
+                localStorage.setItem("password",password)
+
+                window.location.href="login.html"
+                
+            
+        });
+        </script>
+</body>
+</html>
